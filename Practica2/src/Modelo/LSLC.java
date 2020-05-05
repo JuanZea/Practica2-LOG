@@ -1,8 +1,10 @@
 package Modelo;
 
 /**
+ * Esta clase representa la lista simplemente ligada circular.
  *
  * @author JuanZea
+ * @version 1.0
  */
 public class LSLC {
 
@@ -10,7 +12,8 @@ public class LSLC {
     private NodoSimple ultimo;
 
     public LSLC() {
-        primero = ultimo = null;
+        primero = null;
+        ultimo = null;
     }
 
     public boolean esVacio() {
@@ -25,13 +28,22 @@ public class LSLC {
         return ultimo;
     }
 
-    public NodoSimple anterior(NodoSimple x) { // Error si x no esta en la lista
-        NodoSimple p, y;
-        p = primerNodo();
-        y = ultimoNodo();
+    public NodoSimple anterior(NodoSimple x) {
+        if (esVacio()) {
+            System.out.println("La lista esta vacía.");
+            return null;
+        }
+        NodoSimple p, y, f;
+        p = primero;
+        y = ultimo;
+        f = ultimo;
         while (p != x) {
             y = p;
             p = p.retornaLiga();
+            if (p == ultimo) {
+                System.out.println("El nodo no pertenece a la lista.");
+                return null;
+            }
         }
         return y;
     }
@@ -41,7 +53,7 @@ public class LSLC {
     }
 
     public void recorre() {
-        if (this.esVacio()) {
+        if (esVacio()) {
             return;
         }
         NodoSimple p;
@@ -54,12 +66,12 @@ public class LSLC {
     }
 
     public NodoSimple buscaDondeInsertar(int d) {
-        if (this.esVacio()) {
+        if (esVacio()) {
             return null;
         }
         NodoSimple p, y;
-        p = primerNodo();
-        y = null;
+        p = primero;
+        y = ultimo;
         if (primerNodo().retornaDato() > d) {
             return y;
         }
@@ -77,16 +89,10 @@ public class LSLC {
     }
 
     public void conectar(NodoSimple x, NodoSimple y) {
-        if (this.esVacio()) {
+        if (y == null) {
             primero = x;
             ultimo = x;
             x.asignaLiga(x);
-            return;
-        }
-        if (y == null) {
-            primero = x;
-            x.asignaLiga(ultimo.retornaLiga());
-            ultimo.asignaLiga(x);
             return;
         }
         x.asignaLiga(y.retornaLiga());
@@ -97,7 +103,7 @@ public class LSLC {
     }
 
     public NodoSimple buscarDato(int d, NodoSimple y) {
-        if (this.esVacio()) {
+        if (esVacio()) {
             return null;
         }
         NodoSimple p;
@@ -118,7 +124,7 @@ public class LSLC {
 
     public void borrar(NodoSimple x, NodoSimple y) {
         if (x == null) {
-            System.out.println("El dato no existe");
+            System.out.println("El dato no existe.");
         }
         desconectar(x, y);
     }

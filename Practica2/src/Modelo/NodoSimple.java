@@ -1,8 +1,9 @@
 package Modelo;
 
 /**
- *
+ * Esta clase representa un nodo simple.
  * @author JuanZea
+ * @version 1.0
  */
 public class NodoSimple {
     private int dato;
