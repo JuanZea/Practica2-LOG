@@ -12,7 +12,7 @@ import Vista.Ventana;
 public class Program {
     public static void main(String[] args) 
     {
-       testear();
+       //testear();
        Ventana ventana = new Ventana();
        ventana.setVisible(true);
     }

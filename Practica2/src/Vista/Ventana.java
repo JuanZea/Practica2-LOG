@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author JuanZea
@@ -27,56 +29,166 @@ public class Ventana extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButtonPideDatos = new javax.swing.JButton();
+        TabPrincipal = new javax.swing.JTabbedPane();
+        basePanInicio = new javax.swing.JPanel();
+        panInicio = new javax.swing.JPanel();
+        lblIngrese = new javax.swing.JLabel();
+        texFIngresoDato = new javax.swing.JTextField();
+        btnIngresar = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        fondo1 = new javax.swing.JLabel();
+        basePanL0 = new javax.swing.JPanel();
+        fondo2 = new javax.swing.JLabel();
+        basePanL2 = new javax.swing.JPanel();
+        fondo3 = new javax.swing.JLabel();
+        basePanL3 = new javax.swing.JPanel();
+        fondo4 = new javax.swing.JLabel();
+        basePanL5 = new javax.swing.JPanel();
+        fondo5 = new javax.swing.JLabel();
+        basePanIntersecciones = new javax.swing.JPanel();
+        fondo6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Aplicación");
-        setName("ventana"); // NOI18N
+        setTitle("EL ENLISTADOR");
+        setIconImage(new ImageIcon(getClass().getResource("/Vista/img/Icono7.png")).getImage());
+        setResizable(false);
 
-        jButtonPideDatos.setText("Ingresar Datos");
-        jButtonPideDatos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPideDatosActionPerformed(evt);
-            }
-        });
+        TabPrincipal.setBackground(java.awt.Color.orange);
+        TabPrincipal.setTabPlacement(javax.swing.JTabbedPane.LEFT);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButtonPideDatos)
-                .addContainerGap(280, Short.MAX_VALUE))
+        basePanInicio.setLayout(null);
+
+        panInicio.setOpaque(false);
+
+        lblIngrese.setBackground(java.awt.Color.orange);
+        lblIngrese.setForeground(java.awt.Color.black);
+        lblIngrese.setText("Ingrese el dato:");
+        lblIngrese.setOpaque(true);
+
+        btnIngresar.setText("Ingresar");
+
+        btnLimpiar.setText("Limpiar");
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(java.awt.Color.orange);
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jTextArea1.setForeground(java.awt.Color.black);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("PRACTICA #2:\nLÓGICA Y  REPRESENTACIÓN II\nUNIVERSIDAD DE ANTIOQUIA\n2019-2\n\nESTA APLICACIÓN SEPARA\nEN LISTAS SIMPLEMENTE\nLIGADAS CIRCULARES LOS\nDATOS NUMÉRICOS ENTRADOS\nPOR EL USUARIO Y PERMITE\nCREAR NUEVAS LISTAS CON\nLAS INTERSECCIONES DE LAS\nYA GENERADAS.\n\n                      FELIPEGD Y JUANZEA.");
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jButton1.setBackground(java.awt.Color.orange);
+        jButton1.setForeground(java.awt.Color.black);
+        jButton1.setText("Generar datos aleatorios");
+
+        javax.swing.GroupLayout panInicioLayout = new javax.swing.GroupLayout(panInicio);
+        panInicio.setLayout(panInicioLayout);
+        panInicioLayout.setHorizontalGroup(
+            panInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panInicioLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(panInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(panInicioLayout.createSequentialGroup()
+                        .addComponent(lblIngrese)
+                        .addGap(18, 18, 18)
+                        .addComponent(texFIngresoDato, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButtonPideDatos)
-                .addContainerGap(262, Short.MAX_VALUE))
+        panInicioLayout.setVerticalGroup(
+            panInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panInicioLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(panInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panInicioLayout.createSequentialGroup()
+                        .addGroup(panInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblIngrese)
+                            .addComponent(texFIngresoDato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnIngresar)
+                        .addGap(24, 24, 24)
+                        .addComponent(btnLimpiar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
+                .addGap(22, 22, 22))
         );
+
+        basePanInicio.add(panInicio);
+        panInicio.setBounds(0, 0, 470, 290);
+
+        fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo1.png"))); // NOI18N
+        basePanInicio.add(fondo1);
+        fondo1.setBounds(0, 0, 470, 300);
+
+        TabPrincipal.addTab("Inicio", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono1.png")), basePanInicio); // NOI18N
+
+        basePanL0.setLayout(null);
+
+        fondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo2.png"))); // NOI18N
+        basePanL0.add(fondo2);
+        fondo2.setBounds(0, 0, 470, 300);
+
+        TabPrincipal.addTab("L0", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono2.png")), basePanL0); // NOI18N
+
+        basePanL2.setLayout(null);
+
+        fondo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo2.png"))); // NOI18N
+        basePanL2.add(fondo3);
+        fondo3.setBounds(0, 0, 470, 300);
+
+        TabPrincipal.addTab("L2", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono3.png")), basePanL2); // NOI18N
+
+        basePanL3.setLayout(null);
+
+        fondo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo2.png"))); // NOI18N
+        basePanL3.add(fondo4);
+        fondo4.setBounds(0, 0, 470, 300);
+
+        TabPrincipal.addTab("L3", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono4.png")), basePanL3); // NOI18N
+
+        basePanL5.setLayout(null);
+
+        fondo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo2.png"))); // NOI18N
+        basePanL5.add(fondo5);
+        fondo5.setBounds(0, 0, 470, 300);
+
+        TabPrincipal.addTab("L5", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono5.png")), basePanL5); // NOI18N
+
+        basePanIntersecciones.setLayout(null);
+
+        fondo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo3.png"))); // NOI18N
+        basePanIntersecciones.add(fondo6);
+        fondo6.setBounds(0, 0, 470, 300);
+
+        TabPrincipal.addTab("intersecciones", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono6.png")), basePanIntersecciones); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(TabPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(TabPrincipal)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(589, 339));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButtonPideDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPideDatosActionPerformed
-        VentanaPideDatos v1 = new VentanaPideDatos();
-        v1.setVisible(true);
-    }//GEN-LAST:event_jButtonPideDatosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,7 +226,26 @@ public class Ventana extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonPideDatos;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTabbedPane TabPrincipal;
+    private javax.swing.JPanel basePanInicio;
+    private javax.swing.JPanel basePanIntersecciones;
+    private javax.swing.JPanel basePanL0;
+    private javax.swing.JPanel basePanL2;
+    private javax.swing.JPanel basePanL3;
+    private javax.swing.JPanel basePanL5;
+    private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JLabel fondo1;
+    private javax.swing.JLabel fondo2;
+    private javax.swing.JLabel fondo3;
+    private javax.swing.JLabel fondo4;
+    private javax.swing.JLabel fondo5;
+    private javax.swing.JLabel fondo6;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lblIngrese;
+    private javax.swing.JPanel panInicio;
+    private javax.swing.JTextField texFIngresoDato;
     // End of variables declaration//GEN-END:variables
 }
