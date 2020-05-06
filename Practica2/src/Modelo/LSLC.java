@@ -33,10 +33,9 @@ public class LSLC {
             System.out.println("La lista esta vacía.");
             return null;
         }
-        NodoSimple p, y, f;
+        NodoSimple p, y;
         p = primero;
         y = ultimo;
-        f = ultimo;
         while (p != x) {
             y = p;
             p = p.retornaLiga();
@@ -89,10 +88,16 @@ public class LSLC {
     }
 
     public void conectar(NodoSimple x, NodoSimple y) {
-        if (y == null) {
+        if (esVacio()) {
             primero = x;
             ultimo = x;
             x.asignaLiga(x);
+            return;
+        }
+        if (y == null) {
+            x.asignaLiga(primero);
+            primero = x;
+            ultimo.asignaLiga(x);
             return;
         }
         x.asignaLiga(y.retornaLiga());
