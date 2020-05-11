@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Vista;
 
 import javax.swing.ImageIcon;
@@ -35,18 +30,40 @@ public class Ventana extends javax.swing.JFrame {
         lblIngrese = new javax.swing.JLabel();
         texFIngresoDato = new javax.swing.JTextField();
         btnIngresar = new javax.swing.JButton();
-        btnLimpiar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        btnAleatorio = new javax.swing.JButton();
+        lblIngrese1 = new javax.swing.JLabel();
+        rBtnLimpiar = new javax.swing.JRadioButton();
+        btnLimpiarTodo = new javax.swing.JButton();
         fondo1 = new javax.swing.JLabel();
         basePanL0 = new javax.swing.JPanel();
+        panL0 = new javax.swing.JPanel();
+        btnEliminarSeleccionL0 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ls0 = new javax.swing.JList<>();
+        btnEliminarTodoL0 = new javax.swing.JButton();
         fondo2 = new javax.swing.JLabel();
         basePanL2 = new javax.swing.JPanel();
+        panL2 = new javax.swing.JPanel();
+        btnEliminarSeleccionL2 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ls2 = new javax.swing.JList<>();
+        btnEliminarTodoL2 = new javax.swing.JButton();
         fondo3 = new javax.swing.JLabel();
         basePanL3 = new javax.swing.JPanel();
+        panL3 = new javax.swing.JPanel();
+        btnEliminarSeleccionL3 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        ls3 = new javax.swing.JList<>();
+        btnEliminarTodoL3 = new javax.swing.JButton();
         fondo4 = new javax.swing.JLabel();
         basePanL5 = new javax.swing.JPanel();
+        panL5 = new javax.swing.JPanel();
+        btnEliminarSeleccionL5 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        ls5 = new javax.swing.JList<>();
+        btnEliminarTodoL5 = new javax.swing.JButton();
         fondo5 = new javax.swing.JLabel();
         basePanIntersecciones = new javax.swing.JPanel();
         fondo6 = new javax.swing.JLabel();
@@ -70,8 +87,6 @@ public class Ventana extends javax.swing.JFrame {
 
         btnIngresar.setText("Ingresar");
 
-        btnLimpiar.setText("Limpiar");
-
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jTextArea1.setEditable(false);
@@ -83,9 +98,20 @@ public class Ventana extends javax.swing.JFrame {
         jTextArea1.setText("PRACTICA #2:\nLÓGICA Y  REPRESENTACIÓN II\nUNIVERSIDAD DE ANTIOQUIA\n2019-2\n\nESTA APLICACIÓN SEPARA\nEN LISTAS SIMPLEMENTE\nLIGADAS CIRCULARES LOS\nDATOS NUMÉRICOS ENTRADOS\nPOR EL USUARIO Y PERMITE\nCREAR NUEVAS LISTAS CON\nLAS INTERSECCIONES DE LAS\nYA GENERADAS.\n\n                      FELIPEGD Y JUANZEA.");
         jScrollPane1.setViewportView(jTextArea1);
 
-        jButton1.setBackground(java.awt.Color.orange);
-        jButton1.setForeground(java.awt.Color.black);
-        jButton1.setText("Generar datos aleatorios");
+        btnAleatorio.setBackground(java.awt.Color.orange);
+        btnAleatorio.setForeground(java.awt.Color.black);
+        btnAleatorio.setText("Generar datos aleatorios");
+
+        lblIngrese1.setBackground(java.awt.Color.orange);
+        lblIngrese1.setForeground(java.awt.Color.black);
+        lblIngrese1.setText("Limpiar al enviar:");
+        lblIngrese1.setOpaque(true);
+
+        rBtnLimpiar.setBackground(java.awt.Color.orange);
+        rBtnLimpiar.setForeground(java.awt.Color.white);
+        rBtnLimpiar.setSelected(true);
+
+        btnLimpiarTodo.setText("Borrar Todas Las Listas");
 
         javax.swing.GroupLayout panInicioLayout = new javax.swing.GroupLayout(panInicio);
         panInicio.setLayout(panInicioLayout);
@@ -93,14 +119,17 @@ public class Ventana extends javax.swing.JFrame {
             panInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panInicioLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(panInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(panInicioLayout.createSequentialGroup()
-                        .addComponent(lblIngrese)
-                        .addGap(18, 18, 18)
-                        .addComponent(texFIngresoDato, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(panInicioLayout.createSequentialGroup()
+                            .addComponent(lblIngrese)
+                            .addGap(18, 18, 18)
+                            .addComponent(texFIngresoDato, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnAleatorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnLimpiarTodo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblIngrese1)
+                    .addComponent(rBtnLimpiar))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
@@ -115,17 +144,21 @@ public class Ventana extends javax.swing.JFrame {
                         .addGroup(panInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblIngrese)
                             .addComponent(texFIngresoDato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnIngresar)
-                        .addGap(24, 24, 24)
-                        .addComponent(btnLimpiar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblIngrese1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rBtnLimpiar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addComponent(btnLimpiarTodo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnAleatorio)))
                 .addGap(22, 22, 22))
         );
 
         basePanInicio.add(panInicio);
-        panInicio.setBounds(0, 0, 470, 290);
+        panInicio.setBounds(0, 0, 430, 290);
 
         fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo1.png"))); // NOI18N
         basePanInicio.add(fondo1);
@@ -135,6 +168,43 @@ public class Ventana extends javax.swing.JFrame {
 
         basePanL0.setLayout(null);
 
+        panL0.setOpaque(false);
+
+        btnEliminarSeleccionL0.setText("Eliminar Seleccion");
+
+        jScrollPane2.setViewportView(ls0);
+
+        btnEliminarTodoL0.setText("Eliminar Todo");
+
+        javax.swing.GroupLayout panL0Layout = new javax.swing.GroupLayout(panL0);
+        panL0.setLayout(panL0Layout);
+        panL0Layout.setHorizontalGroup(
+            panL0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panL0Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panL0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnEliminarSeleccionL0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEliminarTodoL0, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34))
+        );
+        panL0Layout.setVerticalGroup(
+            panL0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panL0Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(panL0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panL0Layout.createSequentialGroup()
+                        .addComponent(btnEliminarSeleccionL0, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEliminarTodoL0, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        basePanL0.add(panL0);
+        panL0.setBounds(0, 0, 430, 290);
+
         fondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo2.png"))); // NOI18N
         basePanL0.add(fondo2);
         fondo2.setBounds(0, 0, 470, 300);
@@ -142,6 +212,43 @@ public class Ventana extends javax.swing.JFrame {
         TabPrincipal.addTab("L0", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono2.png")), basePanL0); // NOI18N
 
         basePanL2.setLayout(null);
+
+        panL2.setOpaque(false);
+
+        btnEliminarSeleccionL2.setText("Eliminar Seleccion");
+
+        jScrollPane3.setViewportView(ls2);
+
+        btnEliminarTodoL2.setText("Eliminar Todo");
+
+        javax.swing.GroupLayout panL2Layout = new javax.swing.GroupLayout(panL2);
+        panL2.setLayout(panL2Layout);
+        panL2Layout.setHorizontalGroup(
+            panL2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panL2Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panL2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnEliminarSeleccionL2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEliminarTodoL2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34))
+        );
+        panL2Layout.setVerticalGroup(
+            panL2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panL2Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(panL2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panL2Layout.createSequentialGroup()
+                        .addComponent(btnEliminarSeleccionL2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEliminarTodoL2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        basePanL2.add(panL2);
+        panL2.setBounds(0, 0, 430, 290);
 
         fondo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo2.png"))); // NOI18N
         basePanL2.add(fondo3);
@@ -151,6 +258,43 @@ public class Ventana extends javax.swing.JFrame {
 
         basePanL3.setLayout(null);
 
+        panL3.setOpaque(false);
+
+        btnEliminarSeleccionL3.setText("Eliminar Seleccion");
+
+        jScrollPane4.setViewportView(ls3);
+
+        btnEliminarTodoL3.setText("Eliminar Todo");
+
+        javax.swing.GroupLayout panL3Layout = new javax.swing.GroupLayout(panL3);
+        panL3.setLayout(panL3Layout);
+        panL3Layout.setHorizontalGroup(
+            panL3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panL3Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panL3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnEliminarSeleccionL3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEliminarTodoL3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34))
+        );
+        panL3Layout.setVerticalGroup(
+            panL3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panL3Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(panL3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panL3Layout.createSequentialGroup()
+                        .addComponent(btnEliminarSeleccionL3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEliminarTodoL3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        basePanL3.add(panL3);
+        panL3.setBounds(0, 0, 430, 290);
+
         fondo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo2.png"))); // NOI18N
         basePanL3.add(fondo4);
         fondo4.setBounds(0, 0, 470, 300);
@@ -158,6 +302,43 @@ public class Ventana extends javax.swing.JFrame {
         TabPrincipal.addTab("L3", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono4.png")), basePanL3); // NOI18N
 
         basePanL5.setLayout(null);
+
+        panL5.setOpaque(false);
+
+        btnEliminarSeleccionL5.setText("Eliminar Seleccion");
+
+        jScrollPane5.setViewportView(ls5);
+
+        btnEliminarTodoL5.setText("Eliminar Todo");
+
+        javax.swing.GroupLayout panL5Layout = new javax.swing.GroupLayout(panL5);
+        panL5.setLayout(panL5Layout);
+        panL5Layout.setHorizontalGroup(
+            panL5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panL5Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panL5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnEliminarSeleccionL5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEliminarTodoL5, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34))
+        );
+        panL5Layout.setVerticalGroup(
+            panL5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panL5Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(panL5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panL5Layout.createSequentialGroup()
+                        .addComponent(btnEliminarSeleccionL5, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEliminarTodoL5, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        basePanL5.add(panL5);
+        panL5.setBounds(0, 0, 430, 290);
 
         fondo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo2.png"))); // NOI18N
         basePanL5.add(fondo5);
@@ -233,19 +414,105 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JPanel basePanL2;
     private javax.swing.JPanel basePanL3;
     private javax.swing.JPanel basePanL5;
+    private javax.swing.JButton btnAleatorio;
+    private javax.swing.JButton btnEliminarSeleccionL0;
+    private javax.swing.JButton btnEliminarSeleccionL2;
+    private javax.swing.JButton btnEliminarSeleccionL3;
+    private javax.swing.JButton btnEliminarSeleccionL5;
+    private javax.swing.JButton btnEliminarTodoL0;
+    private javax.swing.JButton btnEliminarTodoL2;
+    private javax.swing.JButton btnEliminarTodoL3;
+    private javax.swing.JButton btnEliminarTodoL5;
     private javax.swing.JButton btnIngresar;
-    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnLimpiarTodo;
     private javax.swing.JLabel fondo1;
     private javax.swing.JLabel fondo2;
     private javax.swing.JLabel fondo3;
     private javax.swing.JLabel fondo4;
     private javax.swing.JLabel fondo5;
     private javax.swing.JLabel fondo6;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblIngrese;
+    private javax.swing.JLabel lblIngrese1;
+    private javax.swing.JList<String> ls0;
+    private javax.swing.JList<String> ls2;
+    private javax.swing.JList<String> ls3;
+    private javax.swing.JList<String> ls5;
     private javax.swing.JPanel panInicio;
+    private javax.swing.JPanel panL0;
+    private javax.swing.JPanel panL2;
+    private javax.swing.JPanel panL3;
+    private javax.swing.JPanel panL5;
+    private javax.swing.JRadioButton rBtnLimpiar;
     private javax.swing.JTextField texFIngresoDato;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JButton getBtnIngresar() {
+        return btnIngresar;
+    }
+
+    public javax.swing.JTextField getTexFIngresoDato() {
+        return texFIngresoDato;
+    }
+
+    public javax.swing.JRadioButton getrBtnLimpiar() {
+        return rBtnLimpiar;
+    }
+
+    public javax.swing.JList<String> getLs0() {
+        return ls0;
+    }
+
+    public javax.swing.JButton getBtnEliminarSeleccionL0() {
+        return btnEliminarSeleccionL0;
+    }
+
+    public javax.swing.JButton getBtnEliminarTodoL0() {
+        return btnEliminarTodoL0;
+    }
+
+    public javax.swing.JButton getBtnEliminarSeleccionL2() {
+        return btnEliminarSeleccionL2;
+    }
+
+    public javax.swing.JButton getBtnEliminarSeleccionL3() {
+        return btnEliminarSeleccionL3;
+    }
+
+    public javax.swing.JButton getBtnEliminarSeleccionL5() {
+        return btnEliminarSeleccionL5;
+    }
+
+    public javax.swing.JButton getBtnEliminarTodoL2() {
+        return btnEliminarTodoL2;
+    }
+
+    public javax.swing.JButton getBtnEliminarTodoL3() {
+        return btnEliminarTodoL3;
+    }
+
+    public javax.swing.JButton getBtnEliminarTodoL5() {
+        return btnEliminarTodoL5;
+    }
+
+    public javax.swing.JList<String> getLs2() {
+        return ls2;
+    }
+
+    public javax.swing.JList<String> getLs3() {
+        return ls3;
+    }
+
+    public javax.swing.JList<String> getLs5() {
+        return ls5;
+    }
+
+    public javax.swing.JButton getBtnLimpiarTodo() {
+        return btnLimpiarTodo;
+    }
 }

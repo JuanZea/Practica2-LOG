@@ -50,6 +50,18 @@ public class LSLC {
     public boolean finDeRecorrido(NodoSimple p) {
         return p == primerNodo();
     }
+    
+    public Integer get(int index) {
+        if(esVacio()){
+            return null;
+        }
+        NodoSimple p;
+        p = primerNodo();
+        for (int i = 0; i < index; i++) {
+            p = p.retornaLiga();
+        }
+        return p.retornaDato();
+    }
 
     public void recorre() {
         if (esVacio()) {
@@ -64,7 +76,7 @@ public class LSLC {
         System.out.println();
     }
 
-    public NodoSimple buscaDondeInsertar(int d) {
+    public NodoSimple buscaDondeInsertarAscendente(int d) {
         if (esVacio()) {
             return null;
         }
@@ -72,12 +84,29 @@ public class LSLC {
         p = primero;
         y = ultimo;
         if (primerNodo().retornaDato() > d) {
-            return y;
+            return null;
         }
         do {
             y = p;
             p = p.retornaLiga();
         } while (!finDeRecorrido(p) && p.retornaDato() < d);
+        return y;
+    }
+
+    public NodoSimple buscaDondeInsertarDescendente(int d) {
+        if (esVacio()) {
+            return null;
+        }
+        NodoSimple p, y;
+        p = primero;
+        y = ultimo;
+        if (primerNodo().retornaDato() < d) {
+            return null;
+        }
+        do {
+            y = p;
+            p = p.retornaLiga();
+        } while (!finDeRecorrido(p) && p.retornaDato() > d);
         return y;
     }
 
