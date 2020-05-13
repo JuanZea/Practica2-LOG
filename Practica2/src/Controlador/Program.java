@@ -19,11 +19,13 @@ public class Program {
     static LSLC lslc2 = new LSLC();
     static LSLC lslc3 = new LSLC();
     static LSLC lslc5 = new LSLC();
+    static LSLC lslcZ = new LSLC();
 
     static DefaultListModel listaL0 = new DefaultListModel();
     static DefaultListModel listaL2 = new DefaultListModel();
     static DefaultListModel listaL3 = new DefaultListModel();
     static DefaultListModel listaL5 = new DefaultListModel();
+    static DefaultListModel listaLZ = new DefaultListModel();
 
     public static void main(String[] args) {
         //testear();
@@ -154,6 +156,21 @@ public class Program {
             }
         });
     }
+    
+    public static void oyteLZ(Ventana v) {
+        v.getLsZ().setModel(listaLZ);
+        oyteBtnGenerarLZ(v);
+    }
+    
+    public static void oyteBtnGenerarLZ(Ventana v) {
+        v.getBtnGenerarLZ().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lslcZ = OperacionesConjuntos.unir(lslc0, lslc2, lslc3, lslc5);
+                
+            }
+        });
+    }
 
     public static void oyteTxtF(Ventana v) {
         v.getTexFIngresoDato().addActionListener(new ActionListener() {
@@ -251,6 +268,14 @@ public class Program {
         listaL0.clear();
         for (int i = 0; i < tamaño; i++) {
             listaL0.addElement(lslc0.get(i));
+        }
+    }
+    
+    public static void actualizarLZ(int dato) {
+        int tamaño = lslcZ.tamanno();
+        listaLZ.clear();
+        for (int i = 0; i < tamaño; i++) {
+            listaLZ.addElement(lslcZ.get(i));
         }
     }
 

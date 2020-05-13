@@ -1,5 +1,6 @@
 package Vista;
 
+import Controlador.OperacionesConjuntos;
 import javax.swing.ImageIcon;
 
 /**
@@ -65,8 +66,35 @@ public class Ventana extends javax.swing.JFrame {
         ls5 = new javax.swing.JList<>();
         btnEliminarTodoL5 = new javax.swing.JButton();
         fondo5 = new javax.swing.JLabel();
+        basePanLZ = new javax.swing.JPanel();
+        panLZ = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        lsZ = new javax.swing.JList<>();
+        btnGenerarLZ = new javax.swing.JButton();
+        fondo9 = new javax.swing.JLabel();
+        basePanDiferencias = new javax.swing.JPanel();
+        panDiferencias = new javax.swing.JPanel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        ls2Diferencia = new javax.swing.JList<>();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        ls3Diferencia = new javax.swing.JList<>();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        ls5Diferencia = new javax.swing.JList<>();
+        lblTituloDiferencias = new javax.swing.JLabel();
+        lbl2 = new javax.swing.JLabel();
+        lbl3 = new javax.swing.JLabel();
+        lbl5 = new javax.swing.JLabel();
+        btnGenerarDiferencias = new javax.swing.JButton();
+        fondo8 = new javax.swing.JLabel();
         basePanIntersecciones = new javax.swing.JPanel();
-        fondo6 = new javax.swing.JLabel();
+        panIntersecciones = new javax.swing.JPanel();
+        combox1 = new javax.swing.JComboBox<>();
+        combox2 = new javax.swing.JComboBox<>();
+        btnIntersectar = new javax.swing.JButton();
+        combox3 = new javax.swing.JComboBox<>();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        lsInterseccion = new javax.swing.JList<>();
+        fondo7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("EL ENLISTADOR");
@@ -162,7 +190,7 @@ public class Ventana extends javax.swing.JFrame {
 
         fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo1.png"))); // NOI18N
         basePanInicio.add(fondo1);
-        fondo1.setBounds(0, 0, 470, 300);
+        fondo1.setBounds(0, 0, 440, 300);
 
         TabPrincipal.addTab("Inicio", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono1.png")), basePanInicio); // NOI18N
 
@@ -207,7 +235,7 @@ public class Ventana extends javax.swing.JFrame {
 
         fondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo2.png"))); // NOI18N
         basePanL0.add(fondo2);
-        fondo2.setBounds(0, 0, 470, 300);
+        fondo2.setBounds(0, 0, 440, 300);
 
         TabPrincipal.addTab("L0", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono2.png")), basePanL0); // NOI18N
 
@@ -252,7 +280,7 @@ public class Ventana extends javax.swing.JFrame {
 
         fondo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo2.png"))); // NOI18N
         basePanL2.add(fondo3);
-        fondo3.setBounds(0, 0, 470, 300);
+        fondo3.setBounds(0, 0, 440, 300);
 
         TabPrincipal.addTab("L2", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono3.png")), basePanL2); // NOI18N
 
@@ -297,7 +325,7 @@ public class Ventana extends javax.swing.JFrame {
 
         fondo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo2.png"))); // NOI18N
         basePanL3.add(fondo4);
-        fondo4.setBounds(0, 0, 470, 300);
+        fondo4.setBounds(0, 0, 440, 300);
 
         TabPrincipal.addTab("L3", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono4.png")), basePanL3); // NOI18N
 
@@ -342,17 +370,226 @@ public class Ventana extends javax.swing.JFrame {
 
         fondo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo2.png"))); // NOI18N
         basePanL5.add(fondo5);
-        fondo5.setBounds(0, 0, 470, 300);
+        fondo5.setBounds(0, 0, 440, 300);
 
         TabPrincipal.addTab("L5", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono5.png")), basePanL5); // NOI18N
 
+        basePanLZ.setLayout(null);
+
+        panLZ.setOpaque(false);
+
+        jScrollPane6.setViewportView(lsZ);
+
+        btnGenerarLZ.setText("GENERAR");
+
+        javax.swing.GroupLayout panLZLayout = new javax.swing.GroupLayout(panLZ);
+        panLZ.setLayout(panLZLayout);
+        panLZLayout.setHorizontalGroup(
+            panLZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panLZLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(btnGenerarLZ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(43, 43, 43)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(106, 106, 106))
+        );
+        panLZLayout.setVerticalGroup(
+            panLZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panLZLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(panLZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                    .addComponent(btnGenerarLZ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        basePanLZ.add(panLZ);
+        panLZ.setBounds(0, 0, 430, 290);
+
+        fondo9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo2.png"))); // NOI18N
+        basePanLZ.add(fondo9);
+        fondo9.setBounds(0, 0, 440, 300);
+
+        TabPrincipal.addTab("LZ", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono8.png")), basePanLZ); // NOI18N
+
+        basePanDiferencias.setLayout(null);
+
+        panDiferencias.setOpaque(false);
+
+        ls2Diferencia.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane13.setViewportView(ls2Diferencia);
+
+        ls3Diferencia.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane14.setViewportView(ls3Diferencia);
+
+        ls5Diferencia.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane15.setViewportView(ls5Diferencia);
+
+        lblTituloDiferencias.setBackground(java.awt.Color.orange);
+        lblTituloDiferencias.setForeground(java.awt.Color.black);
+        lblTituloDiferencias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTituloDiferencias.setText("Lo quedo en la lista y no quedo en la intersección de L2, L3 y L5");
+        lblTituloDiferencias.setOpaque(true);
+
+        lbl2.setBackground(java.awt.Color.orange);
+        lbl2.setForeground(java.awt.Color.black);
+        lbl2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl2.setText("L2");
+        lbl2.setOpaque(true);
+
+        lbl3.setBackground(java.awt.Color.orange);
+        lbl3.setForeground(java.awt.Color.black);
+        lbl3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl3.setText("L3");
+        lbl3.setOpaque(true);
+
+        lbl5.setBackground(java.awt.Color.orange);
+        lbl5.setForeground(java.awt.Color.black);
+        lbl5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl5.setText("L5");
+        lbl5.setOpaque(true);
+
+        btnGenerarDiferencias.setText("GENERAR");
+
+        javax.swing.GroupLayout panDiferenciasLayout = new javax.swing.GroupLayout(panDiferencias);
+        panDiferencias.setLayout(panDiferenciasLayout);
+        panDiferenciasLayout.setHorizontalGroup(
+            panDiferenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panDiferenciasLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(panDiferenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnGenerarDiferencias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblTituloDiferencias, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panDiferenciasLayout.createSequentialGroup()
+                        .addGroup(panDiferenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(34, 34, 34)
+                        .addGroup(panDiferenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panDiferenciasLayout.createSequentialGroup()
+                                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panDiferenciasLayout.createSequentialGroup()
+                                .addComponent(lbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbl5, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(37, 37, 37))
+        );
+        panDiferenciasLayout.setVerticalGroup(
+            panDiferenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panDiferenciasLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(lblTituloDiferencias)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(btnGenerarDiferencias)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panDiferenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl3)
+                    .addComponent(lbl2)
+                    .addComponent(lbl5))
+                .addGap(18, 18, 18)
+                .addGroup(panDiferenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                    .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane15))
+                .addGap(24, 24, 24))
+        );
+
+        basePanDiferencias.add(panDiferencias);
+        panDiferencias.setBounds(0, 0, 440, 300);
+
+        fondo8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo3.png"))); // NOI18N
+        basePanDiferencias.add(fondo8);
+        fondo8.setBounds(0, 0, 440, 300);
+
+        TabPrincipal.addTab("Diferencias", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono6.png")), basePanDiferencias); // NOI18N
+
         basePanIntersecciones.setLayout(null);
 
-        fondo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo3.png"))); // NOI18N
-        basePanIntersecciones.add(fondo6);
-        fondo6.setBounds(0, 0, 470, 300);
+        panIntersecciones.setOpaque(false);
 
-        TabPrincipal.addTab("intersecciones", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono6.png")), basePanIntersecciones); // NOI18N
+        combox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        combox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        combox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combox2ActionPerformed(evt);
+            }
+        });
+
+        btnIntersectar.setText("INTERSECTAR");
+
+        combox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        combox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combox3ActionPerformed(evt);
+            }
+        });
+
+        lsInterseccion.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane9.setViewportView(lsInterseccion);
+
+        javax.swing.GroupLayout panInterseccionesLayout = new javax.swing.GroupLayout(panIntersecciones);
+        panIntersecciones.setLayout(panInterseccionesLayout);
+        panInterseccionesLayout.setHorizontalGroup(
+            panInterseccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panInterseccionesLayout.createSequentialGroup()
+                .addGroup(panInterseccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panInterseccionesLayout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(btnIntersectar, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panInterseccionesLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(combox1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(combox2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(combox3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panInterseccionesLayout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        panInterseccionesLayout.setVerticalGroup(
+            panInterseccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panInterseccionesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnIntersectar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panInterseccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(combox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(combox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(combox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        basePanIntersecciones.add(panIntersecciones);
+        panIntersecciones.setBounds(0, 0, 440, 300);
+
+        fondo7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo3.png"))); // NOI18N
+        basePanIntersecciones.add(fondo7);
+        fondo7.setBounds(0, 0, 440, 300);
+
+        TabPrincipal.addTab("Intersecciones", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono6.png")), basePanIntersecciones); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -370,6 +607,14 @@ public class Ventana extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(589, 339));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void combox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combox3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combox3ActionPerformed
+
+    private void combox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combox2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -408,12 +653,14 @@ public class Ventana extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane TabPrincipal;
+    private javax.swing.JPanel basePanDiferencias;
     private javax.swing.JPanel basePanInicio;
     private javax.swing.JPanel basePanIntersecciones;
     private javax.swing.JPanel basePanL0;
     private javax.swing.JPanel basePanL2;
     private javax.swing.JPanel basePanL3;
     private javax.swing.JPanel basePanL5;
+    private javax.swing.JPanel basePanLZ;
     private javax.swing.JButton btnAleatorio;
     private javax.swing.JButton btnEliminarSeleccionL0;
     private javax.swing.JButton btnEliminarSeleccionL2;
@@ -423,31 +670,56 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarTodoL2;
     private javax.swing.JButton btnEliminarTodoL3;
     private javax.swing.JButton btnEliminarTodoL5;
+    private javax.swing.JButton btnGenerarDiferencias;
+    private javax.swing.JButton btnGenerarLZ;
     private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton btnIntersectar;
     private javax.swing.JButton btnLimpiarTodo;
+    private javax.swing.JComboBox<String> combox1;
+    private javax.swing.JComboBox<String> combox2;
+    private javax.swing.JComboBox<String> combox3;
     private javax.swing.JLabel fondo1;
     private javax.swing.JLabel fondo2;
     private javax.swing.JLabel fondo3;
     private javax.swing.JLabel fondo4;
     private javax.swing.JLabel fondo5;
-    private javax.swing.JLabel fondo6;
+    private javax.swing.JLabel fondo7;
+    private javax.swing.JLabel fondo8;
+    private javax.swing.JLabel fondo9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lbl2;
+    private javax.swing.JLabel lbl3;
+    private javax.swing.JLabel lbl5;
     private javax.swing.JLabel lblIngrese;
     private javax.swing.JLabel lblIngrese1;
+    private javax.swing.JLabel lblTituloDiferencias;
     private javax.swing.JList<String> ls0;
     private javax.swing.JList<String> ls2;
+    private javax.swing.JList<String> ls2Diferencia;
     private javax.swing.JList<String> ls3;
+    private javax.swing.JList<String> ls3Diferencia;
     private javax.swing.JList<String> ls5;
+    private javax.swing.JList<String> ls5Diferencia;
+    private javax.swing.JList<String> lsInterseccion;
+    private javax.swing.JList<String> lsZ;
+    private javax.swing.JPanel panDiferencias;
     private javax.swing.JPanel panInicio;
+    private javax.swing.JPanel panIntersecciones;
     private javax.swing.JPanel panL0;
     private javax.swing.JPanel panL2;
     private javax.swing.JPanel panL3;
     private javax.swing.JPanel panL5;
+    private javax.swing.JPanel panLZ;
     private javax.swing.JRadioButton rBtnLimpiar;
     private javax.swing.JTextField texFIngresoDato;
     // End of variables declaration//GEN-END:variables
@@ -514,5 +786,13 @@ public class Ventana extends javax.swing.JFrame {
 
     public javax.swing.JButton getBtnLimpiarTodo() {
         return btnLimpiarTodo;
+    }
+
+    public javax.swing.JButton getBtnGenerarLZ() {
+        return btnGenerarLZ;
+    }
+
+    public javax.swing.JList<String> getLsZ() {
+        return lsZ;
     }
 }

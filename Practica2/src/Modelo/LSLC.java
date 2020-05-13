@@ -62,6 +62,20 @@ public class LSLC {
         }
         return p.retornaDato();
     }
+    
+    public int tamanno(){
+        int t = 0;
+        if (esVacio()) {
+            return 0;
+        }
+        NodoSimple p;
+        p = primerNodo();
+        do {
+            t++;
+            p = p.retornaLiga();
+        } while (!finDeRecorrido(p));
+        return t;
+    }
 
     public void recorre() {
         if (esVacio()) {
