@@ -430,49 +430,34 @@ public class Ventana extends javax.swing.JFrame {
 
         panDiferencias.setOpaque(false);
 
-        ls2Diferencia.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane13.setViewportView(ls2Diferencia);
 
-        ls3Diferencia.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane14.setViewportView(ls3Diferencia);
 
-        ls5Diferencia.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane15.setViewportView(ls5Diferencia);
 
         lblTituloDiferencias.setBackground(java.awt.Color.orange);
         lblTituloDiferencias.setForeground(java.awt.Color.black);
         lblTituloDiferencias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTituloDiferencias.setText("Lo quedo en la lista y no quedo en la intersección de L2, L3 y L5");
+        lblTituloDiferencias.setText("Los datos en la lista X que no estan en las otras listas");
         lblTituloDiferencias.setOpaque(true);
 
         lbl2.setBackground(java.awt.Color.orange);
         lbl2.setForeground(java.awt.Color.black);
         lbl2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl2.setText("L2");
+        lbl2.setText("X = L2");
         lbl2.setOpaque(true);
 
         lbl3.setBackground(java.awt.Color.orange);
         lbl3.setForeground(java.awt.Color.black);
         lbl3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl3.setText("L3");
+        lbl3.setText("X =L3");
         lbl3.setOpaque(true);
 
         lbl5.setBackground(java.awt.Color.orange);
         lbl5.setForeground(java.awt.Color.black);
         lbl5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl5.setText("L5");
+        lbl5.setText("X = L5");
         lbl5.setOpaque(true);
 
         btnGenerarDiferencias.setText("GENERAR");
@@ -485,7 +470,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(panDiferenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnGenerarDiferencias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTituloDiferencias, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
+                    .addComponent(lblTituloDiferencias, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panDiferenciasLayout.createSequentialGroup()
                         .addGroup(panDiferenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -818,5 +803,21 @@ public class Ventana extends javax.swing.JFrame {
 
     public javax.swing.JButton getBtnLimpiarLZ() {
         return btnLimpiarLZ;
+    }
+
+    public javax.swing.JButton getBtnGenerarDiferencias() {
+        return btnGenerarDiferencias;
+    }
+
+    public javax.swing.JList<String> getLs2Diferencia() {
+        return ls2Diferencia;
+    }
+
+    public javax.swing.JList<String> getLs3Diferencia() {
+        return ls3Diferencia;
+    }
+
+    public javax.swing.JList<String> getLs5Diferencia() {
+        return ls5Diferencia;
     }
 }

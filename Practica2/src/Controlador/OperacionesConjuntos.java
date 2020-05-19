@@ -39,6 +39,10 @@ public class OperacionesConjuntos {
         NodoSimple x = l.buscarDato(dato, null);
         return x != null;
     }
+    
+    public static void diferencia(LSLC a,LSLC b) {
+        
+    }
 
     public static void intersectar(LSLC a, LSLC b) {
         LSLC x = new LSLC();

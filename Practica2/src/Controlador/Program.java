@@ -20,12 +20,20 @@ public class Program {
     static LSLC lslc3 = new LSLC();
     static LSLC lslc5 = new LSLC();
     static LSLC lslcZ = new LSLC();
+    static LSLC lslcI = new LSLC();
+    static LSLC lslc2D = new LSLC();
+    static LSLC lslc3D = new LSLC();
+    static LSLC lslc5D = new LSLC();
 
     static DefaultListModel listaL0 = new DefaultListModel();
     static DefaultListModel listaL2 = new DefaultListModel();
     static DefaultListModel listaL3 = new DefaultListModel();
     static DefaultListModel listaL5 = new DefaultListModel();
     static DefaultListModel listaLZ = new DefaultListModel();
+    static DefaultListModel listaI = new DefaultListModel();
+    static DefaultListModel listaL2D = new DefaultListModel();
+    static DefaultListModel listaL3D = new DefaultListModel();
+    static DefaultListModel listaL5D = new DefaultListModel();
 
     public static void main(String[] args) {
         //testear();
@@ -258,8 +266,23 @@ public class Program {
         });
     }
 
-
+    public static void oyteDiferencias(Ventana v) {
+        oyteBtnGenerarDiferencias(v);
+    }
     
+    public static void oyteBtnGenerarDiferencias(Ventana v) {
+        v.getBtnGenerarDiferencias().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                OperacionesConjuntos.diferencia(lslc0, lslc0);
+                actualizarL2D();
+            }
+        });
+    }
+    
+    public static void oyteIntersecciones(Ventana v) {
+        
+    }
 
     public static void actualizarListas(int dato) {
         boolean added = false;
@@ -321,6 +344,10 @@ public class Program {
         for (int i = 0; i < lslcZ.tamanno(); i++) {
             listaLZ.addElement(lslcZ.get(i));
         }
+    }
+    
+    public static void actualizarL2D(){
+        
     }
 
     public static void ordenarLZ() {

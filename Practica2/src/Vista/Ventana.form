@@ -797,7 +797,7 @@
                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="btnGenerarDiferencias" max="32767" attributes="0"/>
-                              <Component id="lblTituloDiferencias" alignment="0" pref="382" max="32767" attributes="0"/>
+                              <Component id="lblTituloDiferencias" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jScrollPane13" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
@@ -857,13 +857,7 @@
                     <Component class="javax.swing.JList" name="ls2Diferencia">
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                          <StringArray count="5">
-                            <StringItem index="0" value="Item 1"/>
-                            <StringItem index="1" value="Item 2"/>
-                            <StringItem index="2" value="Item 3"/>
-                            <StringItem index="3" value="Item 4"/>
-                            <StringItem index="4" value="Item 5"/>
-                          </StringArray>
+                          <StringArray count="0"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -882,13 +876,7 @@
                     <Component class="javax.swing.JList" name="ls3Diferencia">
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                          <StringArray count="5">
-                            <StringItem index="0" value="Item 1"/>
-                            <StringItem index="1" value="Item 2"/>
-                            <StringItem index="2" value="Item 3"/>
-                            <StringItem index="3" value="Item 4"/>
-                            <StringItem index="4" value="Item 5"/>
-                          </StringArray>
+                          <StringArray count="0"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -907,13 +895,7 @@
                     <Component class="javax.swing.JList" name="ls5Diferencia">
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                          <StringArray count="5">
-                            <StringItem index="0" value="Item 1"/>
-                            <StringItem index="1" value="Item 2"/>
-                            <StringItem index="2" value="Item 3"/>
-                            <StringItem index="3" value="Item 4"/>
-                            <StringItem index="4" value="Item 5"/>
-                          </StringArray>
+                          <StringArray count="0"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -931,7 +913,7 @@
                       <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Lo quedo en la lista y no quedo en la intersecci&#xf3;n de L2, L3 y L5"/>
+                    <Property name="text" type="java.lang.String" value="Los datos en la lista X que no estan en las otras listas"/>
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                 </Component>
@@ -944,7 +926,7 @@
                       <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="L2"/>
+                    <Property name="text" type="java.lang.String" value="X = L2"/>
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                 </Component>
@@ -957,7 +939,7 @@
                       <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="L3"/>
+                    <Property name="text" type="java.lang.String" value="X =L3"/>
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                 </Component>
@@ -970,7 +952,7 @@
                       <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="L5"/>
+                    <Property name="text" type="java.lang.String" value="X = L5"/>
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                 </Component>
