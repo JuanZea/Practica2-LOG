@@ -17,10 +17,10 @@ public class OperacionesConjuntos {
     public static LSLC unir(LSLC a, LSLC b, LSLC c, LSLC d) {
         LSLC lslcZ = new LSLC();
         for (int i = 0; i < a.tamanno(); i++) {
-                lslcZ.insertar(a.get(i), null);
+            lslcZ.insertar(a.get(i), null);
         }
         for (int i = 0; i < b.tamanno(); i++) {
-                lslcZ.insertar(b.get(i), null);
+            lslcZ.insertar(b.get(i), null);
         }
         for (int i = 0; i < c.tamanno(); i++) {
             if (!pertenece(b, c.get(i))) {
@@ -35,13 +35,33 @@ public class OperacionesConjuntos {
         return lslcZ;
     }
 
+    public static LSLC unir(LSLC a, LSLC b) {
+        LSLC lslcZ = new LSLC();
+        for (int i = 0; i < a.tamanno(); i++) {
+            lslcZ.insertar(a.get(i), null);
+        }
+        for (int i = 0; i < b.tamanno(); i++) {
+            if (!pertenece(a, b.get(i))) {
+                lslcZ.insertar(b.get(i), null);
+            }
+        }
+        return lslcZ;
+    }
+
     public static boolean pertenece(LSLC l, int dato) {
         NodoSimple x = l.buscarDato(dato, null);
         return x != null;
     }
-    
-    public static void diferencia(LSLC a,LSLC b) {
-        
+
+    public static LSLC diferencia(LSLC a, LSLC b, LSLC c) {
+        LSLC bc = unir(b, c);
+        LSLC aD = new LSLC();
+        for (int i = 0; i < a.tamanno(); i++) {
+            if(!pertenece(bc, a.get(i))){
+                aD.insertar(a.get(i), null);
+            }
+        }
+        return aD;
     }
 
     public static void intersectar(LSLC a, LSLC b) {

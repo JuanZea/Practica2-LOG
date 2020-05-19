@@ -45,6 +45,7 @@ public class Program {
         oyteL3(v);
         oyteL5(v);
         oyteLZ(v);
+        oyteDiferencias(v);
     }
 
     public static void oyteInicio(Ventana v) {
@@ -52,7 +53,7 @@ public class Program {
         oyteBtnLimpiarTodo(v);
         oyteTxtF(v);
     }
-    
+
     public static void oyteBtnIngresar(Ventana v) {
         v.getBtnIngresar().addActionListener(new ActionListener() {
             @Override
@@ -68,7 +69,7 @@ public class Program {
             }
         });
     }
-    
+
     public static Integer verificacion(String ansS) {
         int ansI;
         try {
@@ -92,7 +93,7 @@ public class Program {
             }
         });
     }
-    
+
     public static void oyteTxtF(Ventana v) {
         v.getTexFIngresoDato().addActionListener(new ActionListener() {
             @Override
@@ -269,19 +270,24 @@ public class Program {
     public static void oyteDiferencias(Ventana v) {
         oyteBtnGenerarDiferencias(v);
     }
-    
+
     public static void oyteBtnGenerarDiferencias(Ventana v) {
         v.getBtnGenerarDiferencias().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                OperacionesConjuntos.diferencia(lslc0, lslc0);
-                actualizarL2D();
+                v.getLs2Diferencia().setModel(listaL2D);
+                v.getLs3Diferencia().setModel(listaL3D);
+                v.getLs5Diferencia().setModel(listaL5D);
+                lslc2D = OperacionesConjuntos.diferencia(lslc2, lslc3, lslc5);
+                lslc3D = OperacionesConjuntos.diferencia(lslc3, lslc5, lslc2);
+                lslc5D = OperacionesConjuntos.diferencia(lslc5, lslc2, lslc3);
+                actualizarLD();
             }
         });
     }
-    
+
     public static void oyteIntersecciones(Ventana v) {
-        
+
     }
 
     public static void actualizarListas(int dato) {
@@ -345,9 +351,20 @@ public class Program {
             listaLZ.addElement(lslcZ.get(i));
         }
     }
-    
-    public static void actualizarL2D(){
-        
+
+    public static void actualizarLD() {
+        listaL2D.clear();
+        listaL3D.clear();
+        listaL5D.clear();
+        for (int i = 0; i < lslc2D.tamanno(); i++) {
+            listaL2D.addElement(lslc2D.get(i));
+        }
+        for (int i = 0; i < lslc3D.tamanno(); i++) {
+            listaL3D.addElement(lslc3D.get(i));
+        }
+        for (int i = 0; i < lslc5D.tamanno(); i++) {
+            listaL5D.addElement(lslc5D.get(i));
+        }
     }
 
     public static void ordenarLZ() {
