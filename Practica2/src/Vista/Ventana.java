@@ -71,6 +71,8 @@ public class Ventana extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         lsZ = new javax.swing.JList<>();
         btnGenerarLZ = new javax.swing.JButton();
+        btnOrdenarLZ = new javax.swing.JButton();
+        btnLimpiarLZ = new javax.swing.JButton();
         fondo9 = new javax.swing.JLabel();
         basePanDiferencias = new javax.swing.JPanel();
         panDiferencias = new javax.swing.JPanel();
@@ -382,24 +384,36 @@ public class Ventana extends javax.swing.JFrame {
 
         btnGenerarLZ.setText("GENERAR");
 
+        btnOrdenarLZ.setText("ORDENAR");
+
+        btnLimpiarLZ.setText("LIMPIAR");
+
         javax.swing.GroupLayout panLZLayout = new javax.swing.GroupLayout(panLZ);
         panLZ.setLayout(panLZLayout);
         panLZLayout.setHorizontalGroup(
             panLZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panLZLayout.createSequentialGroup()
                 .addGap(46, 46, 46)
-                .addComponent(btnGenerarLZ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(43, 43, 43)
+                .addGroup(panLZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnOrdenarLZ, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                    .addComponent(btnGenerarLZ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLimpiarLZ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(106, 106, 106))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         panLZLayout.setVerticalGroup(
             panLZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panLZLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(panLZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                    .addComponent(btnGenerarLZ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panLZLayout.createSequentialGroup()
+                        .addComponent(btnGenerarLZ, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnOrdenarLZ, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnLimpiarLZ, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -674,7 +688,9 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JButton btnGenerarLZ;
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnIntersectar;
+    private javax.swing.JButton btnLimpiarLZ;
     private javax.swing.JButton btnLimpiarTodo;
+    private javax.swing.JButton btnOrdenarLZ;
     private javax.swing.JComboBox<String> combox1;
     private javax.swing.JComboBox<String> combox2;
     private javax.swing.JComboBox<String> combox3;
@@ -794,5 +810,13 @@ public class Ventana extends javax.swing.JFrame {
 
     public javax.swing.JList<String> getLsZ() {
         return lsZ;
+    }
+
+    public javax.swing.JButton getBtnOrdenarLZ() {
+        return btnOrdenarLZ;
+    }
+
+    public javax.swing.JButton getBtnLimpiarLZ() {
+        return btnLimpiarLZ;
     }
 }
