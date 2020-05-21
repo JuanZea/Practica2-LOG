@@ -124,7 +124,7 @@ public class Ventana extends javax.swing.JFrame {
         jTextArea1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jTextArea1.setForeground(java.awt.Color.black);
         jTextArea1.setRows(5);
-        jTextArea1.setText("PRACTICA #2:\nLÓGICA Y  REPRESENTACIÓN II\nUNIVERSIDAD DE ANTIOQUIA\n2019-2\n\nESTA APLICACIÓN SEPARA\nEN LISTAS SIMPLEMENTE\nLIGADAS CIRCULARES LOS\nDATOS NUMÉRICOS ENTRADOS\nPOR EL USUARIO Y PERMITE\nCREAR NUEVAS LISTAS CON\nLAS INTERSECCIONES DE LAS\nYA GENERADAS.\n\n                      FELIPEGD Y JUANZEA.");
+        jTextArea1.setText("PRACTICA #2:\nLÓGICA Y  REPRESENTACIÓN II\nUNIVERSIDAD DE ANTIOQUIA\n2019-2\n\nESTA APLICACIÓN SEPARA\nEN LISTAS SIMPLEMENTE\nLIGADAS CIRCULARES LOS\nDATOS NUMÉRICOS ENTRADOS\nPOR EL USUARIO Y PERMITE\nCREAR NUEVAS LISTAS MEDIANTE\nOPERACIONES DE LAS\nYA GENERADAS.\n\n                      FELIPEGD Y JUANZEA.");
         jScrollPane1.setViewportView(jTextArea1);
 
         lblIngrese1.setBackground(java.awt.Color.orange);

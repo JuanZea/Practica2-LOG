@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
  */
 public class Program {
 
+    static boolean logica = false;
+
     static LSLC lslc0 = new LSLC();
     static LSLC lslc2 = new LSLC();
     static LSLC lslc3 = new LSLC();
@@ -75,7 +77,7 @@ public class Program {
         try {
             ansI = Integer.parseInt(ansS);
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "El dato ingresado no es numérico", "ERROR", 0, null);
+            JOptionPane.showMessageDialog(null, "El dato ingresado no es un número entero", "ERROR", 0, null);
             return null;
         }
         return ansI;
@@ -90,6 +92,8 @@ public class Program {
                 v.getBtnEliminarTodoL3().doClick();
                 v.getBtnEliminarTodoL5().doClick();
                 v.getBtnLimpiarLZ().doClick();
+                v.getBtnGenerarDiferencias().doClick();
+                v.getBtnIntersectar().doClick();
             }
         });
     }
@@ -243,16 +247,21 @@ public class Program {
             public void actionPerformed(ActionEvent e) {
                 lslcZ = OperacionesConjuntos.unir(lslc0, lslc2, lslc3, lslc5);
                 actualizar(lslcZ, listaLZ);
+                logica = true;
             }
         });
     }
 
     public static void oyteBtnOrdenarLZ(Ventana v) {
-        v.getBtnGenerarLZ().addActionListener(new ActionListener() {
+        v.getBtnOrdenarLZ().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ordenarLZ();
-                actualizar(lslcZ, listaLZ);
+                if (logica && !lslcZ.esVacio()) {
+                    ordenarLZ();
+                    actualizar(lslcZ, listaLZ);
+                } else {
+                    JOptionPane.showMessageDialog(null, "No hay nada que ordenar", "ERROR", 0, null);
+                }
             }
         });
     }
@@ -263,6 +272,7 @@ public class Program {
             public void actionPerformed(ActionEvent e) {
                 lslcZ = new LSLC();
                 actualizar(lslcZ, listaLZ);
+                logica = false;
             }
         });
     }
@@ -342,6 +352,28 @@ public class Program {
     }
 
     public static void ordenarLZ() {
-        //ORDENAR
+        LSLC temp = new LSLC();
+        NodoSimple y;
+        NodoSimple p;
+        NodoSimple x;
+        for (int i = 0; i < lslcZ.tamanno(); i++) {
+            y = temp.buscaDondeInsertarAscendente(lslcZ.get(i));
+            temp.insertar(lslcZ.get(i), y);
+        }
+        y = temp.primerNodo();
+        for (int i = 0; i < lslcZ.tamanno() / 2 - 1; i++) {
+            y = y.retornaLiga();
+        }
+        p = y.retornaLiga();
+        x = p.retornaLiga();
+        p.asignaLiga(temp.primerNodo());
+        int calibrador = (lslcZ.tamanno() % 2 == 0) ? 1 : 0;
+        for (int i = 0; i < lslcZ.tamanno() / 2 - calibrador; i++) {
+            p = x;
+            x = x.retornaLiga();
+            temp.insertar(p.retornaDato(), y);
+        }
+
+        lslcZ = temp;
     }
 }

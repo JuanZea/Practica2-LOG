@@ -173,7 +173,7 @@
                           <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
                         </Property>
                         <Property name="rows" type="int" value="5"/>
-                        <Property name="text" type="java.lang.String" value="PRACTICA #2:&#xa;L&#xd3;GICA Y  REPRESENTACI&#xd3;N II&#xa;UNIVERSIDAD DE ANTIOQUIA&#xa;2019-2&#xa;&#xa;ESTA APLICACI&#xd3;N SEPARA&#xa;EN LISTAS SIMPLEMENTE&#xa;LIGADAS CIRCULARES LOS&#xa;DATOS NUM&#xc9;RICOS ENTRADOS&#xa;POR EL USUARIO Y PERMITE&#xa;CREAR NUEVAS LISTAS CON&#xa;LAS INTERSECCIONES DE LAS&#xa;YA GENERADAS.&#xa;&#xa;                      FELIPEGD Y JUANZEA."/>
+                        <Property name="text" type="java.lang.String" value="PRACTICA #2:&#xa;L&#xd3;GICA Y  REPRESENTACI&#xd3;N II&#xa;UNIVERSIDAD DE ANTIOQUIA&#xa;2019-2&#xa;&#xa;ESTA APLICACI&#xd3;N SEPARA&#xa;EN LISTAS SIMPLEMENTE&#xa;LIGADAS CIRCULARES LOS&#xa;DATOS NUM&#xc9;RICOS ENTRADOS&#xa;POR EL USUARIO Y PERMITE&#xa;CREAR NUEVAS LISTAS MEDIANTE&#xa;OPERACIONES DE LAS&#xa;YA GENERADAS.&#xa;&#xa;                      FELIPEGD Y JUANZEA."/>
                       </Properties>
                     </Component>
                   </SubComponents>
