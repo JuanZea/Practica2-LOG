@@ -33,7 +33,6 @@ public class Ventana extends javax.swing.JFrame {
         btnIngresar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        btnAleatorio = new javax.swing.JButton();
         lblIngrese1 = new javax.swing.JLabel();
         rBtnLimpiar = new javax.swing.JRadioButton();
         btnLimpiarTodo = new javax.swing.JButton();
@@ -90,9 +89,9 @@ public class Ventana extends javax.swing.JFrame {
         fondo8 = new javax.swing.JLabel();
         basePanIntersecciones = new javax.swing.JPanel();
         panIntersecciones = new javax.swing.JPanel();
+        btnIntersectar = new javax.swing.JButton();
         combox1 = new javax.swing.JComboBox<>();
         combox2 = new javax.swing.JComboBox<>();
-        btnIntersectar = new javax.swing.JButton();
         combox3 = new javax.swing.JComboBox<>();
         jScrollPane9 = new javax.swing.JScrollPane();
         lsInterseccion = new javax.swing.JList<>();
@@ -128,10 +127,6 @@ public class Ventana extends javax.swing.JFrame {
         jTextArea1.setText("PRACTICA #2:\nLÓGICA Y  REPRESENTACIÓN II\nUNIVERSIDAD DE ANTIOQUIA\n2019-2\n\nESTA APLICACIÓN SEPARA\nEN LISTAS SIMPLEMENTE\nLIGADAS CIRCULARES LOS\nDATOS NUMÉRICOS ENTRADOS\nPOR EL USUARIO Y PERMITE\nCREAR NUEVAS LISTAS CON\nLAS INTERSECCIONES DE LAS\nYA GENERADAS.\n\n                      FELIPEGD Y JUANZEA.");
         jScrollPane1.setViewportView(jTextArea1);
 
-        btnAleatorio.setBackground(java.awt.Color.orange);
-        btnAleatorio.setForeground(java.awt.Color.black);
-        btnAleatorio.setText("Generar datos aleatorios");
-
         lblIngrese1.setBackground(java.awt.Color.orange);
         lblIngrese1.setForeground(java.awt.Color.black);
         lblIngrese1.setText("Limpiar al enviar:");
@@ -156,7 +151,6 @@ public class Ventana extends javax.swing.JFrame {
                             .addComponent(lblIngrese)
                             .addGap(18, 18, 18)
                             .addComponent(texFIngresoDato, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(btnAleatorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnLimpiarTodo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(lblIngrese1)
                     .addComponent(rBtnLimpiar))
@@ -169,7 +163,6 @@ public class Ventana extends javax.swing.JFrame {
             .addGroup(panInicioLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(panInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panInicioLayout.createSequentialGroup()
                         .addGroup(panInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblIngrese)
@@ -181,10 +174,9 @@ public class Ventana extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rBtnLimpiar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnLimpiarTodo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnAleatorio)))
-                .addGap(22, 22, 22))
+                        .addComponent(btnLimpiarTodo))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         basePanInicio.add(panInicio);
@@ -520,29 +512,19 @@ public class Ventana extends javax.swing.JFrame {
 
         panIntersecciones.setOpaque(false);
 
-        combox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        combox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        combox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combox2ActionPerformed(evt);
-            }
-        });
-
         btnIntersectar.setText("INTERSECTAR");
 
-        combox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        combox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "L2", "L3", "L5" }));
+
+        combox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "L2", "L3", "L5" }));
+
+        combox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "L2", "L3", "L5" }));
         combox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 combox3ActionPerformed(evt);
             }
         });
 
-        lsInterseccion.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane9.setViewportView(lsInterseccion);
 
         javax.swing.GroupLayout panInterseccionesLayout = new javax.swing.GroupLayout(panIntersecciones);
@@ -611,10 +593,6 @@ public class Ventana extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_combox3ActionPerformed
 
-    private void combox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_combox2ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -660,7 +638,6 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JPanel basePanL3;
     private javax.swing.JPanel basePanL5;
     private javax.swing.JPanel basePanLZ;
-    private javax.swing.JButton btnAleatorio;
     private javax.swing.JButton btnEliminarSeleccionL0;
     private javax.swing.JButton btnEliminarSeleccionL2;
     private javax.swing.JButton btnEliminarSeleccionL3;
@@ -819,5 +796,25 @@ public class Ventana extends javax.swing.JFrame {
 
     public javax.swing.JList<String> getLs5Diferencia() {
         return ls5Diferencia;
+    }
+
+    public javax.swing.JButton getBtnIntersectar() {
+        return btnIntersectar;
+    }
+
+    public javax.swing.JComboBox<String> getCombox1() {
+        return combox1;
+    }
+
+    public javax.swing.JComboBox<String> getCombox2() {
+        return combox2;
+    }
+
+    public javax.swing.JComboBox<String> getCombox3() {
+        return combox3;
+    }
+
+    public javax.swing.JList<String> getLsInterseccion() {
+        return lsInterseccion;
     }
 }

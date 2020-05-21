@@ -57,23 +57,65 @@ public class OperacionesConjuntos {
         LSLC bc = unir(b, c);
         LSLC aD = new LSLC();
         for (int i = 0; i < a.tamanno(); i++) {
-            if(!pertenece(bc, a.get(i))){
+            if (!pertenece(bc, a.get(i))) {
                 aD.insertar(a.get(i), null);
             }
         }
         return aD;
     }
 
-    public static void intersectar(LSLC a, LSLC b) {
-        LSLC x = new LSLC();
-        System.out.println(a.tamanno() + " y " + b.tamanno());
-        NodoSimple p, s;
-        p = a.primerNodo();
-        s = b.primerNodo();
-
-    }
-
-    public static void intersectar(LSLC a, LSLC b, LSLC c) {
-
+    public static LSLC intersectar(int a, int b, int c, LSLC lslc2, LSLC lslc3, LSLC lslc5) {
+        boolean l2 = false;
+        boolean l3 = false;
+        boolean l5 = false;
+        LSLC lslcI = new LSLC();
+        if (a == 1 || b == 1 || c == 1) {
+            l2 = true;
+        }
+        if (a == 2 || b == 2 || c == 2) {
+            l3 = true;
+        }
+        if (a == 3 || b == 3 || c == 3) {
+            l5 = true;
+        }
+        if (l2 && l3 && l5) {
+            for (int i = 0; i < lslc2.tamanno(); i++) {
+                if (pertenece(lslc3, lslc2.get(i)) && pertenece(lslc5, lslc2.get(i))) {
+                    lslcI.insertar(lslc2.get(i), null);
+                }
+            }
+        } else {
+            if (l2 && l3) {
+                for (int i = 0; i < lslc2.tamanno(); i++) {
+                    if (pertenece(lslc3, lslc2.get(i))) {
+                        lslcI.insertar(lslc2.get(i), null);
+                    }
+                }
+            }
+            if (l2 && l5) {
+                for (int i = 0; i < lslc2.tamanno(); i++) {
+                    if (pertenece(lslc5, lslc2.get(i))) {
+                        lslcI.insertar(lslc2.get(i), null);
+                    }
+                }
+            }
+            if (l3 && l5) {
+                for (int i = 0; i < lslc3.tamanno(); i++) {
+                    if (pertenece(lslc5, lslc3.get(i))) {
+                        lslcI.insertar(lslc3.get(i), null);
+                    }
+                }
+            }
+        }
+        if (l2 && !l3 && !l5) {
+            return lslc2;
+        }
+        if (!l2 && l3 && !l5) {
+            return lslc3;
+        }
+        if (!l2 && !l3 && l5) {
+            return lslc5;
+        }
+        return lslcI;
     }
 }

@@ -39,7 +39,7 @@ public class LSLC {
         while (p != x) {
             y = p;
             p = p.retornaLiga();
-            if (p == ultimo) {
+            if (p == primero) {
                 System.out.println("El nodo no pertenece a la lista.");
                 return null;
             }
@@ -50,9 +50,9 @@ public class LSLC {
     public boolean finDeRecorrido(NodoSimple p) {
         return p == primerNodo();
     }
-    
+
     public Integer get(int index) {
-        if(esVacio()){
+        if (esVacio()) {
             return null;
         }
         NodoSimple p;
@@ -62,8 +62,8 @@ public class LSLC {
         }
         return p.retornaDato();
     }
-    
-    public int tamanno(){
+
+    public int tamanno() {
         int t = 0;
         if (esVacio()) {
             return 0;
@@ -178,6 +178,10 @@ public class LSLC {
     }
 
     public void desconectar(NodoSimple x, NodoSimple y) {
+        if (x == y) {
+            primero = null;
+            ultimo = null;
+        }
         y.asignaLiga(x.retornaLiga());
         if (x == primerNodo()) {
             primero = primerNodo().retornaLiga();

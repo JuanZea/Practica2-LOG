@@ -36,7 +36,6 @@ public class Program {
     static DefaultListModel listaL5D = new DefaultListModel();
 
     public static void main(String[] args) {
-        //testear();
         Ventana v = new Ventana();
         v.setVisible(true);
         oyteInicio(v);
@@ -46,6 +45,7 @@ public class Program {
         oyteL5(v);
         oyteLZ(v);
         oyteDiferencias(v);
+        oyteIntersecciones(v);
     }
 
     public static void oyteInicio(Ventana v) {
@@ -118,7 +118,7 @@ public class Program {
                     NodoSimple x = lslc0.buscarDato((int) listaL0.get(index), null);
                     NodoSimple y = lslc0.anterior(x);
                     lslc0.borrar(x, y);
-                    actualizarL0();
+                    actualizar(lslc0, listaL0);
                 }
             }
         });
@@ -129,7 +129,7 @@ public class Program {
             @Override
             public void actionPerformed(ActionEvent e) {
                 lslc0 = new LSLC();
-                actualizarL0();
+                actualizar(lslc0, listaL0);
             }
         });
     }
@@ -150,7 +150,7 @@ public class Program {
                     NodoSimple x = lslc2.buscarDato((int) listaL2.get(index), y);
                     y = lslc2.anterior(x);
                     lslc2.borrar(x, y);;
-                    actualizarL2();
+                    actualizar(lslc2, listaL2);
                 }
             }
         });
@@ -161,7 +161,7 @@ public class Program {
             @Override
             public void actionPerformed(ActionEvent e) {
                 lslc2 = new LSLC();
-                actualizarL2();
+                actualizar(lslc2, listaL2);
             }
         });
     }
@@ -182,7 +182,7 @@ public class Program {
                     NodoSimple x = lslc3.buscarDato((int) listaL3.get(index), y);
                     y = lslc3.anterior(x);
                     lslc3.borrar(x, y);;
-                    actualizarL3();
+                    actualizar(lslc3, listaL3);
                 }
             }
         });
@@ -193,7 +193,7 @@ public class Program {
             @Override
             public void actionPerformed(ActionEvent e) {
                 lslc3 = new LSLC();
-                actualizarL3();
+                actualizar(lslc3, listaL3);
             }
         });
     }
@@ -214,7 +214,7 @@ public class Program {
                     NodoSimple x = lslc5.buscarDato((int) listaL5.get(index), y);
                     y = lslc5.anterior(x);
                     lslc5.borrar(x, y);;
-                    actualizarL5();
+                    actualizar(lslc5, listaL5);
                 }
             }
         });
@@ -225,7 +225,7 @@ public class Program {
             @Override
             public void actionPerformed(ActionEvent e) {
                 lslc5 = new LSLC();
-                actualizarL5();
+                actualizar(lslc5, listaL5);
             }
         });
     }
@@ -242,7 +242,7 @@ public class Program {
             @Override
             public void actionPerformed(ActionEvent e) {
                 lslcZ = OperacionesConjuntos.unir(lslc0, lslc2, lslc3, lslc5);
-                actualizarLZ();
+                actualizar(lslcZ, listaLZ);
             }
         });
     }
@@ -252,7 +252,7 @@ public class Program {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ordenarLZ();
-                actualizarLZ();
+                actualizar(lslcZ, listaLZ);
             }
         });
     }
@@ -262,7 +262,7 @@ public class Program {
             @Override
             public void actionPerformed(ActionEvent e) {
                 lslcZ = new LSLC();
-                actualizarLZ();
+                actualizar(lslcZ, listaLZ);
             }
         });
     }
@@ -281,13 +281,30 @@ public class Program {
                 lslc2D = OperacionesConjuntos.diferencia(lslc2, lslc3, lslc5);
                 lslc3D = OperacionesConjuntos.diferencia(lslc3, lslc5, lslc2);
                 lslc5D = OperacionesConjuntos.diferencia(lslc5, lslc2, lslc3);
-                actualizarLD();
+                actualizar(lslc2D, listaL2D);
+                actualizar(lslc3D, listaL3D);
+                actualizar(lslc5D, listaL5D);
             }
         });
     }
 
     public static void oyteIntersecciones(Ventana v) {
+        oyteBtnIntersectar(v);
+    }
 
+    public static void oyteBtnIntersectar(Ventana v) {
+        v.getBtnIntersectar().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int a, b, c;
+                a = v.getCombox1().getSelectedIndex();
+                b = v.getCombox2().getSelectedIndex();
+                c = v.getCombox3().getSelectedIndex();
+                lslcI = OperacionesConjuntos.intersectar(a, b, c, lslc2, lslc3, lslc5);
+                v.getLsInterseccion().setModel(listaI);
+                actualizar(lslcI, listaI);
+            }
+        });
     }
 
     public static void actualizarListas(int dato) {
@@ -296,96 +313,35 @@ public class Program {
             NodoSimple y = lslc2.ultimoNodo();
             lslc2.insertar(dato, y);
             added = true;
-            actualizarL2();
+            actualizar(lslc2, listaL2);
         }
         if (dato % 3 == 0) {
             NodoSimple y = null;
             lslc3.insertar(dato, y);
             added = true;
-            actualizarL3();
+            actualizar(lslc3, listaL3);
         }
         if (dato % 5 == 0) {
             NodoSimple y = lslc5.buscaDondeInsertarAscendente(dato);
             lslc5.insertar(dato, y);
             added = true;
-            actualizarL5();
+            actualizar(lslc5, listaL5);
         }
         if (added == false) {
             NodoSimple y = lslc0.buscaDondeInsertarDescendente(dato);
             lslc0.insertar(dato, y);
-            actualizarL0();
+            actualizar(lslc0, listaL0);
         }
     }
 
-    public static void actualizarL2() {
-        listaL2.clear();
-        for (int i = 0; i < lslc2.tamanno(); i++) {
-            listaL2.addElement(lslc2.get(i));
-        }
-    }
-
-    public static void actualizarL3() {
-        listaL3.clear();
-        for (int i = 0; i < lslc3.tamanno(); i++) {
-            listaL3.addElement(lslc3.get(i));
-        }
-    }
-
-    public static void actualizarL5() {
-        listaL5.clear();
-        for (int i = 0; i < lslc5.tamanno(); i++) {
-            listaL5.addElement(lslc5.get(i));
-        }
-    }
-
-    public static void actualizarL0() {
-        listaL0.clear();
-        for (int i = 0; i < lslc0.tamanno(); i++) {
-            listaL0.addElement(lslc0.get(i));
-        }
-    }
-
-    public static void actualizarLZ() {
-        listaLZ.clear();
-        for (int i = 0; i < lslcZ.tamanno(); i++) {
-            listaLZ.addElement(lslcZ.get(i));
-        }
-    }
-
-    public static void actualizarLD() {
-        listaL2D.clear();
-        listaL3D.clear();
-        listaL5D.clear();
-        for (int i = 0; i < lslc2D.tamanno(); i++) {
-            listaL2D.addElement(lslc2D.get(i));
-        }
-        for (int i = 0; i < lslc3D.tamanno(); i++) {
-            listaL3D.addElement(lslc3D.get(i));
-        }
-        for (int i = 0; i < lslc5D.tamanno(); i++) {
-            listaL5D.addElement(lslc5D.get(i));
+    public static void actualizar(LSLC lslc, DefaultListModel lista) {
+        lista.clear();
+        for (int i = 0; i < lslc.tamanno(); i++) {
+            lista.addElement(lslc.get(i));
         }
     }
 
     public static void ordenarLZ() {
-        int tamaño = lslcZ.tamanno();
-        listaLZ.clear();
-        for (int i = 0; i < tamaño; i++) {
-            listaLZ.addElement(lslcZ.get(i));
-        }
+        //ORDENAR
     }
-
-    public static void testear() {
-        LSLC l = new LSLC();
-        NodoSimple y = null;
-        l.insertar(3, y);
-        y = l.ultimoNodo();
-        l.insertar(4, y);
-        y = l.ultimoNodo();
-        l.insertar(5, y);
-        l.insertar(2, null);
-        l.insertar(1, null);
-        l.insertar(0, null);
-    }
-
 }
